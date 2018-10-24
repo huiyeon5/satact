@@ -1,0 +1,40 @@
+.Half{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half-cover {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-div {
+    display: flex;
+    align-items: flex-end;
+    height:200px;
+}
+
+.Half-img{
+    width:300px;
+    height:136px;
+}
+
+.red{
+    background: rgb(207,0,15,0.7);
+}
+
+.red .Half-img {
+    height:200px;
+}
+
+.blue{
+    background: rgb(31,71,136,0.7);
+}
+
