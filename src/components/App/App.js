@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
-import Landing from '../Landing/Landing';
-import Split from '../Split/Split';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Start from '../Start/Start';
+import QuestionList from '../QuestionList/QuestionList';
+
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      direct: true
-    };
-  }
-
-  handleClick() {
-    this.setState({direct: !this.state.direct})
-  }
-
-  render() {
-    if(this.state.direct){
-      return (
-        <div className="App">
-          <Landing />
-          <Split />
-        </div>
-      );
+    render() {
+        return(
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Start} />
+                    <Route path="/questions" component={QuestionList} />
+                </Switch>
+            </Router>
+        );
     }
-  }
 }
 
 export default App;

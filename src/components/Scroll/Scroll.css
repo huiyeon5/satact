@@ -10,6 +10,18 @@
     margin: auto;
 }
 
+.ExamScroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  margin: auto;
+  position: absolute;
+  top:85%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
  .container {
     position: relative;
     width: 24px;

@@ -7,7 +7,6 @@ class Split extends Component {
         return (
             <div className="Split">
                 <Half type="SAT"/>
-                <Half type="ACT"/>
             </div>
         );
     }
