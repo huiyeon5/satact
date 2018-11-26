@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import QHeader from '../QHeader/QHeader';
 import QFooter from '../QFooter/QFooter';
-
+import QNavigation from '../QNavigation/QNavigation';
+import './QuestionList.css';
 
 class QuestionList extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class QuestionList extends Component {
         }
         this.goBack = this.goBack.bind(this);
         this.goForward = this.goForward.bind(this);
+        this.goSpecificQuestion = this.goSpecificQuestion.bind(this);
     }
 
     goHome() {
@@ -35,10 +37,17 @@ class QuestionList extends Component {
         }
     }
 
+    goSpecificQuestion(i) {
+        this.setState({
+            qNumber: i
+        });
+    }
+
     render() {
         return (
             <div className="QuestionList">
                 <QHeader qNumber={this.state.qNumber}/>
+                <QNavigation onClick={this.goSpecificQuestion}/>
                 <QFooter qNumber={this.state.qNumber} goBack={this.goBack} goForward={this.goForward}/>
             </div>
         );

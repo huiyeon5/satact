@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './QHeader.css';
 
 class QHeader extends Component {
     render() {

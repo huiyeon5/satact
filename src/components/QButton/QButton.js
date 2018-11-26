@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './QButton.css';
 
 class QButton extends Component {
     render() {

@@ -1,0 +1,15 @@
+.qnav {
+    margin:auto;
+    padding:0;
+    list-style: none;
+    border-radius: 50%;
+    border: 1px solid black;
+    width:70%;
+    height:60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #0be881;
+    color: #0be881;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.qbutton {
+    width: 170px;
+    height: 60%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #05c46b;
+    box-shadow: 0 2px 5px rgba(4, 143, 11, 0.5);
+    cursor: pointer;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: white;
+    border-radius: 4px;
+    appearance: none;
+    font-size: 16px;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import QButton from '../QButton/QButton';
+import './QFooter.css';
 
 class QFooter extends Component {
     render() {

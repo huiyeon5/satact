@@ -1,0 +1,13 @@
+.QuestionList {
+    width:100%;
+    height:100vh;
+    display: grid;
+    grid-template-rows: 80px 60px 1fr 80px;
+    grid-template-areas:
+            "QHeader"
+            "QNavigation"
+            "QMain"
+            "QFooter";
+    /* background: #e7fdec;  */
+}
+
