@@ -1,15 +1,39 @@
 .qnav {
-    margin:auto;
+    margin: auto;
     padding:0;
     list-style: none;
     border-radius: 50%;
     border: 1px solid black;
-    width:70%;
-    height:60%;
+    width:60%;
+    height:75%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: #0be881;
-    color: #0be881;
+    border-color: rgb(146, 146, 146);
+    color: rgb(146, 146, 146);
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 12px;
+    opacity:0.4;
+}
+
+.qnav:hover {
+    background-color: #ff7979;
+    color: white;
+    border:none;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.active {
+    border-color: red;
+    color: red;
+    opacity: 1;
+}
+
+.active:hover {
+    background-color: white;
+    color: red;
+    border:1px solid red;
 }

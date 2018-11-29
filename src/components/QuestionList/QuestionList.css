@@ -2,12 +2,12 @@
     width:100%;
     height:100vh;
     display: grid;
-    grid-template-rows: 80px 60px 1fr 80px;
+    grid-template-rows: 100px 1fr 80px;
+    grid-template-columns: 150px 1fr;
     grid-template-areas:
-            "QHeader"
-            "QNavigation"
-            "QMain"
-            "QFooter";
+            "QHeader QHeader"
+            "QNavigation QMain"
+            "QFooter QFooter";
     /* background: #e7fdec;  */
 }
 

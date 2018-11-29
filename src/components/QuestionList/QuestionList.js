@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import QHeader from '../QHeader/QHeader';
 import QFooter from '../QFooter/QFooter';
 import QNavigation from '../QNavigation/QNavigation';
+import QMain from '../QMain/QMain';
 import './QuestionList.css';
 
 class QuestionList extends Component {
@@ -47,7 +48,8 @@ class QuestionList extends Component {
         return (
             <div className="QuestionList">
                 <QHeader qNumber={this.state.qNumber}/>
-                <QNavigation onClick={this.goSpecificQuestion}/>
+                <QNavigation onClick={this.goSpecificQuestion} qNumber={this.state.qNumber}/>
+                <QMain qNumber={this.state.qNumber}/>
                 <QFooter qNumber={this.state.qNumber} goBack={this.goBack} goForward={this.goForward}/>
             </div>
         );

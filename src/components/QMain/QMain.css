@@ -1,0 +1,48 @@
+.QMain {
+    grid-area: QMain;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionMain {
+    margin:auto;
+    width:70%;
+    height:80%;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+        "question"
+        "answer";
+}
+
+.questionHeader {
+    grid-area: question;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.answerlist {
+    margin:0;
+    padding:0;
+    grid-area: answer;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.answer {
+    list-style: none;
+    margin:0;
+    padding:0;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}

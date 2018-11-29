@@ -2,8 +2,22 @@
     grid-area: QNavigation;
     width:100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(31,1fr);
     margin:0;
     padding:0;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    /* opacity: 0.3; */
+    transition: all 0.4s ease;
+}
+
+.QNavigation:hover {
+    opacity: 1;
+}
+
+.q {
+    margin:auto;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    width:100%;
+    height:70%;
 }
