@@ -9,6 +9,7 @@ class QMain extends Component {
         this.renderQuestions = this.renderQuestions.bind(this);
     }
 
+
     getQuestions(){
         var obj = {};
         if(this.props.qNumber === 0){
@@ -71,7 +72,7 @@ class QMain extends Component {
             obj['Answer'] = answers;
         }
         else if(this.props.qNumber === 8){
-            obj['Question'] = "Answer the following WITHOUT using a calculator: If &radic;x + 22 = 38, what is the value of x?";
+            obj['Question'] = `Answer the following WITHOUT using a calculator: If SQRT(x) + 22 = 38, what is the value of x?`;
             let answers = [];
             answers.push("32");
             answers.push("256");
@@ -255,16 +256,19 @@ class QMain extends Component {
 
     renderQuestions() {
         const questionSet = this.getQuestions();
-
+        var self = this;
         const text = (
-            <div className="questionMain">
+            <div className={`questionMain question${this.props.qNumber}`}>
                 <span className="questionHeader">{questionSet['Question']}</span>
                 <ul className="answerlist">
-                    {questionSet['Answer'].map((answer, i) => {
-                        return (
-                            <li className="answer" key={i}>{answer}</li>
-                        )
-                    })}
+                    <div className="answers">
+                        {questionSet['Answer'].map((answer, i) => {
+                            const list = ['A','B','C','D'];
+                            return (
+                                <li className={self.props.answers[self.props.qNumber] === i ? "selectedAnswer":"answer"} onClick={() => {self.props.onClick(self.props.qNumber, i)}} key={i}>{`${list[i]}. \t\t ${answer}`}</li>
+                            )
+                        })}
+                    </div>
                 </ul>
             </div>
         )

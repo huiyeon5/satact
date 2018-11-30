@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    background: #f6f7fb;
 }
 
 button::-moz-focus-inner {
