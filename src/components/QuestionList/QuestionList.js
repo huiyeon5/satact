@@ -3,6 +3,7 @@ import QHeader from '../QHeader/QHeader';
 import QFooter from '../QFooter/QFooter';
 import QNavigation from '../QNavigation/QNavigation';
 import QMain from '../QMain/QMain';
+import {Route} from 'react-router-dom';
 import './QuestionList.css';
 
 class QuestionList extends Component {
@@ -42,12 +43,14 @@ class QuestionList extends Component {
                 28:null,
                 29:null,
                 30:null
-            }
+            },
+            notAnswered:null
         }
         this.goBack = this.goBack.bind(this);
         this.goForward = this.goForward.bind(this);
         this.goSpecificQuestion = this.goSpecificQuestion.bind(this);
         this.updateAnswer = this.updateAnswer.bind(this);
+        this.goToResult = this.goToResult.bind(this);
     }
 
     goHome() {
@@ -80,16 +83,35 @@ class QuestionList extends Component {
     updateAnswer(i, selection) {
         let answers = this.state.answers;
         answers[i] = selection;
+        console.log(answers);
         this.setState({answers})
+    }
+
+    goToResult() {
+        const answers = this.state.answers;
+        let notAnswered = []
+        for(let i = 1; i <= 30; i++) {
+            if(answers[i] === null ) {
+                notAnswered.push(i);
+            }
+        }
+
+        if(notAnswered.length === 0 ){
+            window.location = '/result';
+        } else {
+            window.location = '/result'
+        }
     }
 
     render() {
         return (
             <div className="QuestionList">
+                <Route exact path="/result" component={QMain} />
+                {this.state.notAnswered ? console.log("hello") : null}
                 <QHeader qNumber={this.state.qNumber}/>
                 <QNavigation onClick={this.goSpecificQuestion} qNumber={this.state.qNumber} answers={this.state.answers}/>
                 <QMain qNumber={this.state.qNumber} onClick={this.updateAnswer} answers={this.state.answers}/>
-                <QFooter qNumber={this.state.qNumber} goBack={this.goBack} goForward={this.goForward}/>
+                <QFooter qNumber={this.state.qNumber} goBack={this.goBack} goForward={this.goForward} goToResult={this.goToResult}/>
             </div>
         );
     }

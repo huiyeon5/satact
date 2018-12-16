@@ -15,3 +15,9 @@
     appearance: none;
     font-size: 16px;
 }
+
+.resultbutton {
+    transform: scale(1.1);
+    font-size: 20px;
+    background-color: #0edf7d;
+}

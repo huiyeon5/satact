@@ -10,7 +10,8 @@ class App extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Start} />
-                    <Route path="/questions" component={QuestionList} />
+                    <Route exact path="/questions" component={QuestionList} />
+                    {/* <Route path="/result" component={QuestionList} /> */}
                 </Switch>
             </Router>
         );

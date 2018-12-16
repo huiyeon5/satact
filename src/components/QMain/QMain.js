@@ -13,8 +13,12 @@ class QMain extends Component {
     getQuestions(){
         var obj = {};
         if(this.props.qNumber === 0){
-            obj["Question"] = "Hello";
-            obj["Answer"] = ["Fuck"];
+            obj["Question"] = "Disclaimer";
+            let answers = [];
+            answers.push("This quiz will take only about 30 - 40 min! Dont worry, it does not test your knowledge, its just to know more about you!")
+            answers.push("Do not REFRESH, CLOSE or LEAVE the website as the answers will not be saved!")
+            answers.push("You need to finish all the questions if you want to see your results!")
+            obj["Answer"] = answers;
         }
         if(this.props.qNumber === 1){
             obj['Question'] = "Do you like to read?";
@@ -72,7 +76,7 @@ class QMain extends Component {
             obj['Answer'] = answers;
         }
         else if(this.props.qNumber === 8){
-            obj['Question'] = `Answer the following WITHOUT using a calculator: If SQRT(x) + 22 = 38, what is the value of x?`;
+            obj['Question'] = `Answer the following WITHOUT using a calculator: \nIf SQRT(x) + 22 = 38, what is the value of x?`;
             let answers = [];
             answers.push("32");
             answers.push("256");
@@ -257,21 +261,42 @@ class QMain extends Component {
     renderQuestions() {
         const questionSet = this.getQuestions();
         var self = this;
-        const text = (
-            <div className={`questionMain question${this.props.qNumber}`}>
-                <span className="questionHeader">{questionSet['Question']}</span>
-                <ul className="answerlist">
-                    <div className="answers">
-                        {questionSet['Answer'].map((answer, i) => {
-                            const list = ['A','B','C','D'];
-                            return (
-                                <li className={self.props.answers[self.props.qNumber] === i ? "selectedAnswer":"answer"} onClick={() => {self.props.onClick(self.props.qNumber, i)}} key={i}>{`${list[i]}. \t\t ${answer}`}</li>
-                            )
-                        })}
-                    </div>
-                </ul>
-            </div>
-        )
+        let text = null;
+        if(this.props.qNumber === 0) {
+            text = (
+                <div className={`questionMain question${this.props.qNumber}`}>
+                    <span className="questionHeader">{questionSet['Question']}</span>
+                    <ul className="answerlist">
+                        <div className="answers">
+                            {questionSet['Answer'].map((answer, i) => {
+                                const list = ['1','2','3'];
+                                console.log(answer);
+                                return (
+                                    <li className="firstQuestionItem" key={i}>{`${list[i]}. \t\t ${answer}`}</li>
+                                )
+                            })}
+                        </div>
+                    </ul>
+                </div>
+            )
+        }else {
+            text = (
+                <div className={`questionMain question${this.props.qNumber}`}>
+                    <span className="questionHeader">{questionSet['Question']}</span>
+                    <ul className="answerlist">
+                        <div className="answers">
+                            {questionSet['Answer'].map((answer, i) => {
+                                const list = ['A','B','C','D'];
+                                console.log(answer);
+                                return (
+                                    <li className={self.props.answers[self.props.qNumber] === list[i] ? "selectedAnswer":"answer"} onClick={() => {self.props.onClick(self.props.qNumber, list[i])}} key={i}>{`${list[i]}. \t\t ${answer}`}</li>
+                                )
+                            })}
+                        </div>
+                    </ul>
+                </div>
+            )
+        }
 
         return text
     }
