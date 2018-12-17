@@ -11,6 +11,7 @@ class QuestionList extends Component {
         super(props);
 
         this.onUnload = this.onUnload.bind(this);
+        this.removeListner = this.removeListner.bind(this);
     }
 
     onUnload(event) { // the method that will be used for both add and remove event
@@ -19,9 +20,13 @@ class QuestionList extends Component {
     }
 
     componentDidMount() {
-       window.addEventListener("beforeunload", this.onUnload)
+       window.addEventListener("beforeunload", this.onUnload);
     }
 
+    removeListner() {
+        window.removeEventListener('beforeunload', this.onUnload);
+        this.props.goToResult();
+    }
 
     render() {
         return (
@@ -29,7 +34,7 @@ class QuestionList extends Component {
                 <QHeader qNumber={this.props.qNumber}/>
                 <QNavigation onClick={this.props.goSpecificQuestion} qNumber={this.props.qNumber} answers={this.props.answers}/>
                 <QMain qNumber={this.props.qNumber} onClick={this.props.updateAnswer} answers={this.props.answers}/>
-                <QFooter qNumber={this.props.qNumber} goBack={this.props.goBack} goForward={this.props.goForward} goToResult={this.props.goToResult}/>
+                <QFooter qNumber={this.props.qNumber} goBack={this.props.goBack} goForward={this.props.goForward} removeListener={this.removeListner}/>
             </div>
         );
     }
