@@ -97,7 +97,7 @@ class App extends Component {
         if(notAnswered.length === 0 ){
             window.location = '/result';
         } else {
-            console.log(notAnswered);
+            alert(`You havent completed Question ${notAnswered}!`)
         }
     }
 

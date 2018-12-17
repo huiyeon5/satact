@@ -51,7 +51,7 @@ class Half extends Component {
                             <span className="examFull">Standardized Aptitude Test</span>
                         </div>
                         <p className="examInfo">The SAT is a standardized test meant to show schools how prepared you are for college by measuring key skills like reading comprehension, computational ability, and clarity of expression. Because so many students take the test, it also provides schools with data about how you compare to your peers nationwide.</p>
-                        <div className="splitbutton s1">Learn More!</div>
+                        <div className="splitbutton s1" onClick={()=> window.open('https://collegereadiness.collegeboard.org/sat', '_blank')}>Learn More!</div>
                     </div>
                     {arrowCheck}
                     <div className="exam2">
@@ -61,7 +61,7 @@ class Half extends Component {
                             <span className="examFull">American College Testing</span>
                         </div>
                         <p className="examInfo">The purpose of the ACT test is to measure a high school student's readiness for college, and provide colleges with one common data point that can be used to compare all applicants. ACT assessment measures high school students' general educational development and their capability to complete college-level work with the multiple choice tests covering four skill areas: English, mathematics, reading, and science.</p>
-                        <div className="splitbutton s2">Learn More!</div>
+                        <div className="splitbutton s2" onClick={()=> window.open('http://www.act.org/content/act/en/products-and-services/the-act/help.html', '_blank')}>Learn More!</div>
                     </div>
                     <Scroll class="ExamScroll"/>
                 </div>

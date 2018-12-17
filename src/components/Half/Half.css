@@ -9,7 +9,10 @@
     height: 100%;
     width:50%;
     margin-right: auto;
-    background: #4c959c;
+    /* background: #4c959c; */
+    background: url("../../img/hello.jpg");
+    background-attachment: fixed;
+    background-size: cover;
     color:white;
     font-family: 'Roboto', sans-serif;
     display: grid;
@@ -153,7 +156,9 @@
 .exam2 {
     height: 100%;
     width:50%;
-    background: #ebb8b4;
+    background: url("../../img/ACT.jpg");
+    background-attachment: fixed;
+    background-size: cover;
     position: absolute;
     top:0;
     left:50%;

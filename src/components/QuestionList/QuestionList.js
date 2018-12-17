@@ -6,6 +6,23 @@ import QMain from '../QMain/QMain';
 import './QuestionList.css';
 
 class QuestionList extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.onUnload = this.onUnload.bind(this);
+    }
+
+    onUnload(event) { // the method that will be used for both add and remove event
+        console.log("hellooww")
+        event.returnValue = "Hellooww"
+    }
+
+    componentDidMount() {
+       window.addEventListener("beforeunload", this.onUnload)
+    }
+
+
     render() {
         return (
             <div className="QuestionList">
