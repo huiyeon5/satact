@@ -15,12 +15,15 @@ class Result extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         for(let i = 1; i <= 30; i++) {
             if(this.props.answers[i] === null ) {
                 window.location='/';
             }
         }
+    }
+
+    componentDidMount() {
         var self = this;
         window.addEventListener('scroll', function(e) {
             if(window.scrollY > 50){
