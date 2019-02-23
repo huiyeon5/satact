@@ -14,8 +14,7 @@ class QuestionList extends Component {
         this.removeListner = this.removeListner.bind(this);
     }
 
-    onUnload(event) { // the method that will be used for both add and remove event
-        console.log("hellooww")
+    onUnload(event) { 
         event.returnValue = "Hellooww"
     }
 

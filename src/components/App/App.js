@@ -81,7 +81,6 @@ class App extends Component {
     updateAnswer(i, selection) {
         let answers = this.state.answers;
         answers[i] = selection;
-        console.log(answers);
         this.setState({answers})
     }
 
@@ -95,6 +94,7 @@ class App extends Component {
         }
 
         if(notAnswered.length === 0 ){
+            localStorage.setItem("answers", JSON.stringify(this.state.answers));        
             window.location = '/result';
         } else {
             alert(`You havent completed Question ${notAnswered}!`)

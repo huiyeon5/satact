@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import './Result.css';
-// import "confetti-js";
 import ResultScroll from '../ResultScroll/ResultScroll';
 import sizeMe from 'react-sizeme';
 import Confetti from 'react-confetti';
@@ -15,51 +14,48 @@ class Result extends Component {
         };
     }
 
-    componentWillMount() {
-        for(let i = 1; i <= 30; i++) {
-            if(this.props.answers[i] === null ) {
-                window.location='/';
-            }
-        }
-    }
-
     componentDidMount() {
-        var self = this;
-        window.addEventListener('scroll', function(e) {
-            if(window.scrollY > 50){
-                self.setState({"confetti": true});
+        if(localStorage.getItem("answers") !== null) {
+            var self = this;
+            window.addEventListener('scroll', function(e) {
+                if(window.scrollY > 50)  {
+                    self.setState({"confetti": true});
+                }
+            })
+            
+            const answers = JSON.parse(localStorage.getItem("answers"));
+            localStorage.removeItem("answers")
+            let check = {
+                "A":0,
+                "B":0,
+                "C":0
             }
-        })
-
-        const answers = this.props.answers;
-        let check = {
-            "A":0,
-            "B":0,
-            "C":0
-        }
-
-        for(var key in answers) {
-            if(answers.hasOwnProperty(key)) {
-                if(answers[key] === "A") {
-                    check["A"] += 1;
-                } else if(answers[key] === "B") {
-                    check["B"] += 1;
-                } else if(answers[key] === "C") {
-                    check["C"] += 1;
+            
+            for(var key in answers) {
+                if(answers.hasOwnProperty(key)) {
+                    if(answers[key] === "A") {
+                        check["A"] += 1;
+                    } else if(answers[key] === "B") {
+                        check["B"] += 1;
+                    } else if(answers[key] === "C") {
+                        check["C"] += 1;
+                    }
                 }
             }
-        }
-
-        if(check["A"] > check["B"]) {
-            this.setState({"result": "SAT"});
-        } else if(check["A"] < check["B"]) {
-            this.setState({"result":"ACT"});
-        } else {
-            if(check["C"] > 6) {
-                this.setState({"result":"ACT"})
-            }else {
-                this.setState({"result": "SAT"})
+            
+            if(check["A"] > check["B"]) {
+                this.setState({"result": "SAT"});
+            } else if(check["A"] < check["B"]) {
+                this.setState({"result":"ACT"});
+            } else {
+                if(check["C"] > 6) {
+                    this.setState({"result":"ACT"})
+                }else {
+                    this.setState({"result": "SAT"})
+                }
             }
+        } else {
+            window.location='/'
         }
     }
 

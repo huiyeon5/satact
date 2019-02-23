@@ -270,7 +270,6 @@ class QMain extends Component {
                         <div className="answers">
                             {questionSet['Answer'].map((answer, i) => {
                                 const list = ['1','2','3'];
-                                console.log(answer);
                                 return (
                                     <li className="firstQuestionItem" key={i}>{`${list[i]}. \t\t ${answer}`}</li>
                                 )
@@ -287,7 +286,6 @@ class QMain extends Component {
                         <div className="answers">
                             {questionSet['Answer'].map((answer, i) => {
                                 const list = ['A','B','C','D'];
-                                console.log(answer);
                                 return (
                                     <li className={self.props.answers[self.props.qNumber] === list[i] ? "selectedAnswer":"answer"} onClick={() => {self.props.onClick(self.props.qNumber, list[i])}} key={i}>{`${list[i]}. \t\t ${answer}`}</li>
                                 )
