@@ -46,7 +46,6 @@ class QNavigation extends Component {
                     <QNavigationItem class={this.props.answers[27] !== null ? "qnav qnav27 aSelected" : this.props.qNumber === 27 ? "qnav qnav27 active" : "qnav qnav27"} onClick={this.props.onClick} qNum={27} />
                     <QNavigationItem class={this.props.answers[28] !== null ? "qnav qnav28 aSelected" : this.props.qNumber === 28 ? "qnav qnav28 active" : "qnav qnav28"} onClick={this.props.onClick} qNum={28} />
                     <QNavigationItem class={this.props.answers[29] !== null ? "qnav qnav29 aSelected" : this.props.qNumber === 29 ? "qnav qnav29 active" : "qnav qnav29"} onClick={this.props.onClick} qNum={29} />
-                    <QNavigationItem class={this.props.answers[30] !== null ? "qnav qnav30 aSelected" : this.props.qNumber === 30 ? "qnav qnav30 active" : "qnav qnav30"} onClick={this.props.onClick} qNum={30} />
                 </div>
             </ul>
         );

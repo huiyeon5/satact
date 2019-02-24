@@ -39,8 +39,7 @@ class App extends Component {
                 26:null,
                 27:null,
                 28:null,
-                29:null,
-                30:null
+                29:null
             },
             notAnswered:null
         }
@@ -63,11 +62,11 @@ class App extends Component {
     }
 
     goForward() {
-        if(this.state.qNumber < 30){
+        if(this.state.qNumber < 29){
             this.setState({qNumber: this.state.qNumber + 1});
         }
 
-        if(this.state.qNumber === 30) {
+        if(this.state.qNumber === 29) {
             this.setState({submit: true});
         }
     }
@@ -87,7 +86,7 @@ class App extends Component {
     goToResult() {
         const answers = this.state.answers;
         let notAnswered = []
-        for(let i = 1; i <= 30; i++) {
+        for(let i = 1; i <= 29; i++) {
             if(answers[i] === null ) {
                 notAnswered.push(i);
             }
