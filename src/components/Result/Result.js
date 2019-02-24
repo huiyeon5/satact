@@ -68,7 +68,7 @@ class Result extends Component {
                     <div id="result">
                         {this.state.confetti ? <Confetti {...this.props.size} numberOfPieces={75} height={h} gravity={0.05} colors={["#e74c3c","#c0392b","#ff7675","#d63031","#FDA7DF"]}/> : null }
                         <h1 className="resulttest">{this.state.result}</h1>
-                        <p className="resultreason">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <p className="resultreason">Congratulations, you have finished the test! Based on our analysis SAT seems to be a more suiting test for you. You seem to be well rounded and like to take some time reading questions and the passage. For that reason SAT is a better test for you as you can take more time than the ACT. We hope you take these results and start studying for you test so that you can get a head start than everyone else.</p>
                     </div>
                 </div>
             )
@@ -79,7 +79,7 @@ class Result extends Component {
                     <div id="result">
                         {this.state.confetti ? <Confetti {...this.props.size} numberOfPieces={75} height={h} gravity={0.05} colors={["#74b9ff","#0984e3","#00cec9","#4834d4"]}/> : null }
                         <h1 className="resulttest">{this.state.result}</h1>
-                        <p className="resultreason">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <p className="resultreason">Congratulations, you have finished the test! Based on our analysis ACT seems to be a more suiting test for you. You seem to excel more in mathematics and science. Also your ability to go through questions seem to be faster than others which is why we recommend you the ACT more. We hope you take these results and start studying for you test so that you can get a head start than everyone else.</p>
                     </div>
                 </div>
             )
