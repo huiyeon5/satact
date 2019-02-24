@@ -1,9 +1,9 @@
 [[redirects]]
   from = "https://chooseyourtest.com/*"
-  to = "https://chooseyourtest.com/"
+  to = "https://chooseyourtest.com"
   force = true
 
 [[redirects]]
   from = "https://determined-northcutt-b07c5f.netlify.com/*"
-  to = "https://chooseyourtest.com/"
+  to = "https://chooseyourtest.com"
   force = true
