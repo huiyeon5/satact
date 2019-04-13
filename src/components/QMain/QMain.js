@@ -80,13 +80,13 @@ class QMain extends Component {
             let answers = [];
             answers.push("32");
             answers.push("256");
-            answers.push("Im not sure how to go around this");
+            answers.push("I'm not sure how to go around this");
             obj['Answer'] = answers;
         }
         else if(this.props.qNumber === 9){
             obj['Question'] = "Your reaction to a lengthy word problem is?";
             let answers = [];
-            answers.push("I better read it all carefully and thoroughly to amke sure I know what I am doing");
+            answers.push("I better read it all carefully and thoroughly to make sure I know what I am doing");
             answers.push("I'm going to skim the question and get only what I need to start answering the question");
             answers.push("I panic");
             obj['Answer'] = answers;
